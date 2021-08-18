@@ -2,7 +2,8 @@ const wrapper = document.querySelector(".wrapper"),
 inputPart = wrapper.querySelector(".input-part"),
 infoText = inputPart.querySelector(".info-text"),
 inputField = inputPart.querySelector("input"),
-locationBtn = inputPart.querySelector("button"),
+locationBtn = inputPart.querySelector(".btn1"),
+locationBtn1 = inputPart.querySelector(".btn"),
 weatherIcon = document.querySelector(".weather-part img"),
 wrapperinput =document.querySelector(".wrapper input"),
 arrowBack = wrapper.querySelector("header i");
@@ -13,6 +14,14 @@ inputField.addEventListener("keyup", e=>{
         requestApi(inputField.value);
     }
 });
+
+locationBtn1.addEventListener("click", e=>{
+    if(inputField.value != ""){
+        requestApi(inputField.value);
+    }
+});
+
+
 
 locationBtn.addEventListener("click", ()=>{
     if(navigator.geolocation){ //if browser support geolocation api
